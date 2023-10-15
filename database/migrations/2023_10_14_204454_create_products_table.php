@@ -17,8 +17,9 @@ return new class extends Migration
             $table->unsignedBigInteger('price');
 
             $table->foreignIdFor(Brand::class)
+                ->nullable()
                 ->constrained()
-                ->cascadeOnDelete()
+                ->nullOnDelete()
                 ->cascadeOnUpdate();
             $table->timestamps();
         });
